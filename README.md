@@ -52,8 +52,9 @@ PROJECT STRUCTURE
 
 
     DEPLOYMENT
-       -/frontend => Netlify
-       -/backend => Render
+    
+        -/frontend => Netlify
+        -/backend => Render
 
 FUTURE POSSIBLE IMPROVEMENTS
    - AI -based job matching
