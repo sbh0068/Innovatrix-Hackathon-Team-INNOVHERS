@@ -63,9 +63,9 @@ FUTURE POSSIBLE IMPROVEMENTS
    - Message system
    - Current status of applications
 
-    [ FASTAPI DOCS LINK] (https://temporary-3-1xq9.onrender.com/docs)
+    [FASTAPI DOCS LINK](https://temporary-3-1xq9.onrender.com/docs)
 
-    [FINAL WEBSITE LINK] (https://tasktrail-website.netlify.app/)
+    [FINAL WEBSITE LINK](https://tasktrail-website.netlify.app/)
 
      
      
