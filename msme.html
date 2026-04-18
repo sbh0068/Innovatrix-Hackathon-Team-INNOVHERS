@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrail-MSME Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 id="logo"
+                style="font-size: 40px; background-color: rgb(0, 55, 255);justify-self: center; text-align: center;">
+                Task<span>Trail</span></h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Profile</li>
+                <li>Skill Challenge</li>
+                <li onclick="logout()">Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+
+            <div class="topbar">
+                <div class="icon" style="font-size: 30px;">👤MSME</div>
+                <div class="menu">
+                    <span class="active">Profile</span>
+                    <span onclick="goToSkill()">Skill Challenge</span>
+                </div>
+            </div>
+
+            <!-- Post a Job -->
+            <div class="post-section">
+                <h2>Post a Job:</h2>
+
+                <input id="taskTitle" class="input full" placeholder="Job Requirements">
+
+                <textarea id="taskDescription" class="input full" placeholder="Job Description"></textarea>
+
+                <div class="row">
+                    <input id="taskSkills" class="input half" placeholder="Skills required">
+                    <input id="taskBudget" class="input half" placeholder="Budget">
+                </div>
+
+                <button class="post-btn" onclick="postTask()">POST</button>
+            </div>
+
+            <!-- Applicants Section -->
+            <div class="applicants-section">
+                <h2>Applicants</h2>
+                <div id="applicantsContainer"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function goToSkill() {
+            window.location.href = "msme-skill.html";
+        }
+    </script>
+
+    <script src="msme.js"></script>
+
+</body>
+
+</html>

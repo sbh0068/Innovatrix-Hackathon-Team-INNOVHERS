@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrail-Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo + Tagline -->
+        <h1 id="logo">Task<span>Trail</span></h1>
+        <p id="tagline">Built on Skills, not Labels.</p>
+
+        <!-- Role Selection -->
+        <div class="cards">
+            <div class="card" id="button-student" onclick="selectRole('student')">
+                <h2>🎓 STUDENT</h2>
+            </div>
+
+            <div class="card" id="button-msme" onclick="selectRole('msme')">
+                <h2>🏢 MSME</h2>
+            </div>
+        </div>
+
+        <!-- Login Panel -->
+        <div id="loginPanel" class="login-panel">
+            <h3 id="roleTitle" style="font-size: 30px;"></h3>
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Password" id="password">
+            <button class="btn" id="login-button" onclick="loginUser()">Login</button>
+        </div>
+
+        <button class="signup-btn" id="signup-button" onclick="openSignup()">Sign Up</button>
+
+    </div>
+
+    <script>
+        let selectedRole = "";
+
+        function selectRole(role) {
+            selectedRole = role;
+
+            const panel = document.getElementById("loginPanel");
+            const title = document.getElementById("roleTitle");
+
+            panel.classList.add("active");
+            title.innerText = role === "student" ? "Student Login" : "MSME Login";
+        }
+
+        function openSignup() {
+            if (!selectedRole) {
+                alert("Please select Student or MSME first!");
+                return;
+            }
+
+            window.open("signup.html?role=" + selectedRole, "_blank");
+        }
+        const forms = document.querySelectorAll("form");
+
+        forms.forEach(form => {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                alert("Signup Successful!");
+
+                window.location.href = "index.html";
+            });
+        });
+
+        // Connect with dashboard
+        if (role === "student") {
+            window.location.href = "student.html";
+        } else {
+            window.location.href = "msme.html";
+        }
+
+// Login button flow
+        function loginUser() {
+            const email = document.querySelector("input[type='email']").value;
+            const password = document.querySelector("input[type='password']").value;
+
+            if (!selectedRole) {
+                alert("Please select Student or MSME first!");
+                return;
+            }
+
+            if (!email || !password) {
+                alert("Please enter email and password!");
+                return;
+            }
+
+
+            if (selectedRole === "student") {
+                window.location.href = "student.html";
+            } else if (selectedRole === "msme") {
+                window.location.href = "msme.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrail-MSME Skill Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 id="logo"
+                style="font-size: 40px; background-color: rgb(0, 55, 255);justify-self: center; text-align: center;">
+                Task<span>Trail</span></h2>
+            <ul>
+                <li onclick="goToDashboard()">Dashboard</li>
+                <li>Profile</li>
+                <li class="active">Skill Challenge</li>
+                <li onclick="logout()">Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Topbar -->
+            <div class="topbar">
+                <div class="icon">🏢</div>
+                <div class="menu">
+                    <span onclick="goToDashboard()">Dashboard</span>
+                    <span class="active">Skill Challenge</span>
+                </div>
+            </div>
+
+            <!-- Skill Challenge Content -->
+            <div class="section">
+
+                <h1>Skill Challenge</h1>
+
+                <input id="jobPost" class="input full" placeholder="Job Post">
+
+                <input id="taskInput" class="input full" placeholder="+ Add Task">
+
+                <div class="dropdown">
+                    <select id="studentsDropdown" class="input full">
+                        <option value="">View Applied Students</option>
+                    </select>
+                </div>
+
+                <div class="btn-row">
+                    <button class="btn">Communication System</button>
+                    <button class="post-btn" onclick="submitChallenge()">SUBMIT</button>
+                </div>
+
+                <h2 style="margin-top: 40px;">Skill Challenge Submissions</h2>
+
+                <div id="submissionsContainer"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="msme-skill.js"></script>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = "msme.html";
+        }
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+
+</html>

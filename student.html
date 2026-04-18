@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrial-Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 id="logo"
+                style="font-size: 40px;background-color: rgb(0, 55, 255);justify-self: center; text-align: center;">
+                Task<span>Trail</span></h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>My Applications</li>
+                <li>Skill Tasks</li>
+                <li>Profile</li>
+                <li onclick="logout()">Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+
+            <!-- Topbar -->
+            <div class="topbar">
+                <div class="icon" style="font-size: 30px;">🎓STUDENT</div>
+                <div class="menu">
+                    <span class="active">Dashboard</span>
+                    <span onclick="goToSkill()">Skill Challenge</span>
+                </div>
+            </div>
+
+            <!-- Search TASKS -->
+            <div class="section">
+                <div class="section">
+                    <h2>Search Tasks</h2>
+
+                    <input type="text" id="searchInput" placeholder="Search by skill (e.g. HTML, Design)"
+                        class="search-bar">
+                    <button class="btn" onclick="searchTasks()">Search</button>
+                    <div id="tasksContainer"></div>
+                </div>
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="section">
+                <h2>Your Progress</h2>
+                <div id="progressContainer" class="progress-cards"></div>
+            </div>
+
+            <!-- APPLICATIONS -->
+            <div class="section">
+                <h2>Applications</h2>
+                <div id="applicationsContainer"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function goToSkill() {
+            window.location.href = "student-skill.html";
+        }
+    </script>
+    <script src="student.js"></script>
+
+</body>
+
+</html>

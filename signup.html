@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrial-SignUp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="logo">Task<span>Trail</span></h1>
+        <h2 id="formTitle">Signup</h2>
+
+        <!-- STUDENT FORM -->
+        <form id="student-signup-form" class="form">
+            <h3>Student Details</h3>
+
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="tel" placeholder="Contact No." required>
+            <input type="text" placeholder="College Name">
+
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="State">
+            <input type="text" placeholder="Skills (e.g. HTML, Python)">
+            
+
+            <input type="text" placeholder="Portfolio / CV link">
+
+            <button type="submit" class="btn">Sign Up as Student</button>
+        </form>
+
+        <!-- MSME FORM -->
+        <form id="msme-signup-form" class="form">
+            <h3>MSME Details</h3>
+
+            <input type="text" placeholder="Company Name" required>
+            <input type="email" placeholder="Business Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="tel" placeholder="Contact No." required>
+
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="State">
+            <input type="text" placeholder="Link for Lisence">
+            
+
+            <button type="submit" class="btn">Sign Up as MSME</button>
+        </form>
+
+        
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const role = params.get("role");
+
+            const studentForm = document.getElementById("student-signup-form");
+            const msmeForm = document.getElementById("msme-signup-form");
+            const title = document.getElementById("formTitle");
+
+            if (role === "student") {
+                studentForm.classList.add("active");
+                title.innerText = "Student Signup";
+            }
+            else if (role === "msme") {
+                msmeForm.classList.add("active");
+                title.innerText = "MSME Signup";
+            }
+            else {
+                title.innerText = "Choose Signup Type";
+            }
+        </script>
+</body>
+
+</html>
